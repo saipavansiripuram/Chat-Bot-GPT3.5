@@ -1,0 +1,31 @@
+<!-- Chatbox Component -->
+<h1 class="pl-4 md:pl-12 mt-9 text-base pt-1 font-semibold md:text-2xl md:pt-4 text-center">Chat Bot</h1>
+<div class="bg-gray-100 rounded-lg shadow-md p-4 max-w-md mx-auto mb-4 mt-[8%]">
+  <!-- Chat Messages -->
+  <div class="overflow-y-auto max-h-48" *ngFor="let message of chatHistory">
+    <div class="flex ml-16 justify-end mb-2" >
+      <div class="bg-blue-500 text-white p-2 rounded-lg" >
+        <!-- Hi there! How can I help you today? -->
+        {{message.you}}
+      </div>
+      <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="User Avatar" class="w-8 h-8 rounded-full mr-2">
+    </div>
+    <div class="flex items-start mb-2" >
+      <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="User Avatar" class="w-8 h-8 rounded-full mr-2">
+      <div class="bg-blue-500 text-white p-2 rounded-lg" >
+        <!-- Hi there! How can I help you today? -->
+        {{message.friend}}
+      </div>
+
+    </div>
+
+    <!-- More Messages Here -->
+  </div>
+  <!-- Chat Input -->
+  <div class="flex mt-4">
+    <input type="text" placeholder="Type your message..."  [(ngModel)]="textInput" class="flex-1 rounded-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500">
+    <button class="ml-2 bg-blue-500 text-white rounded-lg px-4 py-2" (click)="handleChat()">Send</button>
+  </div>
+</div>
+
+
